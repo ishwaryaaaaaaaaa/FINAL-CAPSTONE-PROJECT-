@@ -31,14 +31,14 @@ It was developed as part of the Summer Analytics 2025 Capstone, organized by the
 ```mermaid
 flowchart TD
     Start([Start])
-    A[Ingest Real-time Data with Pathway]
-    B[Extract Features: Occupancy, Queue, Traffic, etc.]
-    C{Model Type?}
-    D1[Model 1: Linear Price Update]
+    A[Ingest Real-Time Data using Pathway]
+    B[Extract Features: Occupancy, Queue, Traffic, Vehicle Type, etc.]
+    C{Select Pricing Model}
+    D1[Model 1: Linear Pricing]
     D2[Model 2: Demand-Based Pricing]
     D3[Model 3: Competitive Pricing]
-    E[Update Price]
-    F[Emit to Visualization (Bokeh)]
+    E[Compute Updated Price]
+    F[Stream Output to Bokeh Dashboard]
     G([End])
 
     Start --> A --> B --> C
@@ -46,6 +46,7 @@ flowchart TD
     C -->|Model 2| D2 --> E
     C -->|Model 3| D3 --> E
     E --> F --> G
+
 
 
 
