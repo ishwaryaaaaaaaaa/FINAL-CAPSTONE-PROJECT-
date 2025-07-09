@@ -29,13 +29,23 @@ It was developed as part of the Summer Analytics 2025 Capstone, organized by the
 ## Architecture Diagram
 
 ```mermaid
-graph TD
-    A[CSV Input Stream] --> B[Pathway Real-Time Engine]
-    B --> C[Feature Engineering - UDF]
-    C --> D[Pricing Logic: Model 1 / 2 / 3]
-    D --> E[Output Stream - JSONL]
-    E --> F[Bokeh Dashboard]
+flowchart TD
+    Start([Start])
+    A[Ingest Real-time Data with Pathway]
+    B[Extract Features: Occupancy, Queue, Traffic, etc.]
+    C{Model Type?}
+    D1[Model 1: Linear Price Update]
+    D2[Model 2: Demand-Based Pricing]
+    D3[Model 3: Competitive Pricing]
+    E[Update Price]
+    F[Emit to Visualization (Bokeh)]
+    G([End])
 
+    Start --> A --> B --> C
+    C -->|Model 1| D1 --> E
+    C -->|Model 2| D2 --> E
+    C -->|Model 3| D3 --> E
+    E --> F --> G
 
 
 
