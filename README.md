@@ -31,9 +31,9 @@ It was developed as part of the Summer Analytics 2025 Capstone, organized by the
 ```mermaid
 graph TD
     A[CSV Input Stream] --> B[Pathway Real-Time Engine]
-    B --> C[Feature Engineering (UDF)]
+    B --> C[Feature Engineering - UDF]
     C --> D[Pricing Logic: Model 1 / 2 / 3]
-    D --> E[Output Stream: JSONL]
+    D --> E[Output Stream - JSONL]
     E --> F[Bokeh Dashboard]
 
 
